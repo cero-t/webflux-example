@@ -14,7 +14,7 @@ public class Demo {
     @GetMapping("/demo")
     public Flux<String> demo() {
         return Flux.interval(Duration.ofMillis(300))
-                .map(i -> i + " " + LocalDateTime.now() + "\n")
+                .map(i -> i + " " + LocalDateTime.now())
                 .take(10);
     }
 
