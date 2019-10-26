@@ -11,10 +11,10 @@ import java.time.LocalDateTime;
 
 @RestController
 public class Demo {
-    @GetMapping(value = "/demo")
+    @GetMapping("/demo")
     public Flux<String> demo() {
         return Flux.interval(Duration.ofMillis(300))
-                .map(i -> i + " " + LocalDateTime.now())
+                .map(i -> i + " " + LocalDateTime.now() + "\n")
                 .take(10);
     }
 
